@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to LeBron's Fan Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d3d3d3;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+    </style>
+    <script>
+        function redirectToAboutPage() {
+            const username = document.getElementById('username').value.trim();
+            if (username) {
+                // Redirect to the about page with the username as a URL parameter
+                window.location.href = `about.html?username=${encodeURIComponent(username)}`;
+            } else {
+                alert("Please enter a username.");
+            }
+            return false; // Prevents form from submitting normally
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>WELCOME TO LEBRON'S FAN PAGE</h1>
+        <img src="https://deadline.com/wp-content/uploads/2022/08/Lebron-James.jpg" alt="LeBron James">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <!-- Form to enter the username and submit -->
+        <form onsubmit="return redirectToAboutPage()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
